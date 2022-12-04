@@ -180,7 +180,7 @@ Site Created
 
 Admin URL: https://app.netlify.com/sites/netlify-serverless-functions-intro
 URL:       https://netlify-serverless-functions-intro.netlify.app
-Site ID:   cXXXXXX-XXXX-XXXXX-81e9-YYYYYYYYYYY
+Site ID:   cXXXXXX-XXXX-XXXXX-XXXX-YYYYYYYYYYY
 
 Linked to netlify-serverless-functions-intro
 

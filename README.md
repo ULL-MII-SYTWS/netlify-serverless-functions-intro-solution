@@ -8,9 +8,9 @@
     - [ntl login](#ntl-login)
     - [ntl status](#ntl-status)
     - [ntl init](#ntl-init)
-  - [Edit netlify/functions/hello-world.js](#edit-netlifyfunctionshello-worldjs)
-  - [Modify index.html](#modify-indexhtml)
-  - [ntl dev](#ntl-dev)
+    - [Edit netlify/functions/hello-world.js](#edit-netlifyfunctionshello-worldjs)
+    - [Modify index.html](#modify-indexhtml)
+    - [ntl dev](#ntl-dev)
 
 # Introduction to Netlify Serverless Functions
 
@@ -292,7 +292,7 @@ Admin url: https://app.netlify.com/sites/netlify-serverless-functions-intro
 To unlink this site, run: netlify unlink
 ```
 
-## Edit netlify/functions/hello-world.js
+### Edit netlify/functions/hello-world.js
 
 ```js
 exports.handler = async (event, context) => {
@@ -303,7 +303,7 @@ exports.handler = async (event, context) => {
 }
 ```
 
-## Modify index.html
+### Modify index.html
 
 ```html
 <script>
@@ -320,7 +320,7 @@ exports.handler = async (event, context) => {
 </script>
 ```
 
-## ntl dev 
+### ntl dev 
 
 ```
 ➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl dev

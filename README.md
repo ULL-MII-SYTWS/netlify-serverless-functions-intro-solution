@@ -8,6 +8,7 @@
     - [ntl login](#ntl-login)
     - [ntl status](#ntl-status)
     - [ntl init](#ntl-init)
+    - [But I've got an error](#but-ive-got-an-error)
     - [Edit netlify/functions/hello-world.js](#edit-netlifyfunctionshello-worldjs)
     - [Modify index.html](#modify-indexhtml)
     - [ntl dev](#ntl-dev)
@@ -207,7 +208,7 @@ Then I continue answering the questions:
 ? No netlify.toml detected. Would you like to create one with these build settings? Yes
 ```
 
-But I've got an error:
+### But I've got an error
 
 ```
 Adding deploy key to repository...

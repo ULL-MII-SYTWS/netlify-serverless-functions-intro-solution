@@ -5,7 +5,7 @@
   - [My Experience](#my-experience)
     - [netlify-cli](#netlify-cli)
     - [ntl cli help](#ntl-cli-help)
-    - [Login](#login)
+    - [ntl login](#ntl-login)
 
 # Introduction to Netlify Serverless Functions
 
@@ -102,7 +102,7 @@ COMMANDS
   $ unlink       Unlink a local folder from a Netlify site
   $ watch        Watch for site deploy to finish
 ```
-### Login
+### ntl login
 
 ``` 
 ➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl login -h      
@@ -124,12 +124,6 @@ DESCRIPTION
 ➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl login
 Logging into your Netlify account...
 Opening https://app.netlify.com/authorize?response_type=ticket&ticket=7e106850c17d884de123c67a41784ae2
-
-You are now logged into your Netlify account!
-
-Run netlify status for account details
-
-To see all available commands run: netlify help
 ```
 
 ![](public/images/netlify-login-1.png)
@@ -138,3 +132,60 @@ Once I've had clicked I've got the following message:
 
 ```
 ![](public/images/netlify-login-2.png)
+
+Now in the terminal appears:
+
+```
+➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl login
+Logging into your Netlify account...
+Opening https://app.netlify.com/authorize?response_type=ticket&ticket=7e106850c17d884de123c67a41784ae2
+
+You are now logged into your Netlify account!
+
+Run netlify status for account details
+
+To see all available commands run: netlify help
+```
+
+### ntl status
+
+```
+➜  explorers-up-and-running-with-serverless-functions git:(main) ntl status
+──────────────────────┐
+ Current Netlify User │
+──────────────────────┘
+Name:  Casiano Rodriguez-Leon
+Email: xxxx@ull.edu.es
+Teams: 
+  Casiano Rodriguez-Leon's team: Collaborator
+ ›   Warning: Did you run `netlify link` yet?
+ ›   Error: You don't appear to be in a folder that is linked to a site
+```
+
+### ntl init
+
+```
+➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl init
+
+Adding local .netlify folder to .gitignore file...
+? What would you like to do? +  Create & configure a new site
+? Team: Casiano Rodriguez-Leon's team
+? Site name (leave blank for a random name; you can change it later): netlify-serverless-functions-intro
+
+Site Created
+
+Admin URL: https://app.netlify.com/sites/netlify-serverless-functions-intro
+URL:       https://netlify-serverless-functions-intro.netlify.app
+Site ID:   c6634808-74d7-4f44-81e9-3180370f2f60
+
+Linked to netlify-serverless-functions-intro
+
+
+? Netlify CLI needs access to your GitHub account to configure Webhooks and Deploy Keys. What would you like to do? Authorize with GitHub through app.netlify.com
+```
+
+I have chose to authorize with GitHub through app.netlify.com
+
+![](public/images/netlify-init-1.png)
+
+![](public/images/netlify-init-2.png)

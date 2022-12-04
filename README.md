@@ -16,3 +16,23 @@ Learn how to use serverless functions in less than 30 minutes!
 | [Customizing the Request with Serverless Functions](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions/customizing-the-request-with-serverless-functions)                   | [Start Code](https://github.com/netlify/explorers-up-and-running-with-serverless-functions/tree/06-begin) | [End Code](https://github.com/netlify/explorers-up-and-running-with-serverless-functions/tree/06-end)   |
 | [The Power of Atomic Serverless Functions](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions/the-power-of-atomic-serverless-functions)                                     | -                                                                                                         | -                                                                                                       |
 | [Next Steps with Serverless Functions](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions/next-steps-with-serverless-functions)                                             | -                                                                                                         | -                                                                                                       |
+
+## Branches in the repo
+
+We can follow the lessons in the video course by checking out the branches in this repo.
+
+```bash
+* main
+  remotes/up/02-begin
+  remotes/up/02-end
+  remotes/up/03-begin
+  remotes/up/03-end
+  remotes/up/04-begin
+  remotes/up/04-end
+  remotes/up/06-begin
+  remotes/up/06-end
+  remotes/up/HEAD -> up/main
+  remotes/up/chore/fossa-workflow-fix-20210820
+  remotes/up/main
+  remotes/up/renovate/configure
+```

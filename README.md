@@ -6,6 +6,8 @@
     - [netlify-cli](#netlify-cli)
     - [ntl cli help](#ntl-cli-help)
     - [ntl login](#ntl-login)
+    - [ntl status](#ntl-status)
+    - [ntl init](#ntl-init)
 
 # Introduction to Netlify Serverless Functions
 
@@ -102,6 +104,7 @@ COMMANDS
   $ unlink       Unlink a local folder from a Netlify site
   $ watch        Watch for site deploy to finish
 ```
+
 ### ntl login
 
 ``` 
@@ -130,7 +133,6 @@ Opening https://app.netlify.com/authorize?response_type=ticket&ticket=7e106850c1
 
 Once I've had clicked I've got the following message:
 
-```
 ![](public/images/netlify-login-2.png)
 
 Now in the terminal appears:

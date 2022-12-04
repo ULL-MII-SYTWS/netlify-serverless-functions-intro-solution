@@ -8,6 +8,9 @@
     - [ntl login](#ntl-login)
     - [ntl status](#ntl-status)
     - [ntl init](#ntl-init)
+  - [Edit netlify/functions/hello-world.js](#edit-netlifyfunctionshello-worldjs)
+  - [Modify index.html](#modify-indexhtml)
+  - [ntl dev](#ntl-dev)
 
 # Introduction to Netlify Serverless Functions
 
@@ -195,3 +198,181 @@ I've chosen to authorize with GitHub through app.netlify.com
 and now I'm logged in netlify-cli with my GitHub credentials:
 
 ![](images/netlify-init-2.png)
+
+Then I continue answering the questions:
+
+```
+? Your build command (hugo build/yarn run build/etc): # no build command
+? Directory to deploy (blank for current dir): public
+? No netlify.toml detected. Would you like to create one with these build settings? Yes
+```
+
+But I've got an error:
+
+```
+Adding deploy key to repository...
+ ›   Error: Failed adding GitHub deploy key with error: Not Found. Does the repository netlify-serverless-functions-intro-solution exist and do ULL-MII-SYTWS has the correct permissions to set up deploy keys?
+```
+
+Since the repository `netlify-serverless-functions-intro-solution`  exists there must be a problem with the permissions?. 
+
+So I went to GH config oauth apps and change the permits for the netlify-cli Oauth app:
+
+![](images/netlify-authorize-org-1.png)
+
+and switched to grant:
+
+![](images/netlify-authorize-org-2.png)
+
+Let us see the status:
+
+```
+➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl status
+──────────────────────┐
+ Current Netlify User │
+──────────────────────┘
+Name:   Casiano Rodriguez-Leon
+Email:  crguezl@ull.edu.es
+GitHub: crguezl
+Teams:
+  Casiano Rodriguez-Leon's team: Collaborator
+────────────────────┐
+ Netlify Site Info  │
+────────────────────┘
+Current site: netlify-serverless-functions-intro
+Netlify TOML: /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/netlify.toml
+Admin URL:    https://app.netlify.com/sites/netlify-serverless-functions-intro
+Site URL:     https://netlify-serverless-functions-intro.netlify.app
+Site Id:      
+```
+
+so I tried to use the `link` command to link the project to the Netlify site:
+
+```
+➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl link --gitRemoteName origin --debug
+
+❯ Initial build environment
+cwd: /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions
+featureFlags: []
+mode: cli
+siteId: 
+
+❯ UI build settings
+baseRelDir: false
+
+❯ Resolved build environment
+branch: main
+buildDir: /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions
+configPath: /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/netlify.toml
+context: production
+env:
+  - DEPLOY_ID
+  - BUILD_ID
+  - NETLIFY_LOCAL
+  - HEAD
+  - COMMIT_REF
+  - CACHED_COMMIT_REF
+  - PULL_REQUEST
+  - LANG
+  - LANGUAGE
+  - LC_ALL
+  - GATSBY_TELEMETRY_DISABLED
+  - NEXT_TELEMETRY_DISABLED
+
+❯ Resolved config
+build:
+  command: '# no build command'
+  commandOrigin: config
+  publish: /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/public
+  publishOrigin: config
+functionsDirectory: /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/netlify/functions
+Site already linked to "netlify-serverless-functions-intro"
+Admin url: https://app.netlify.com/sites/netlify-serverless-functions-intro
+
+To unlink this site, run: netlify unlink
+```
+
+## Edit netlify/functions/hello-world.js
+
+```js
+exports.handler = async (event, context) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: 'Hello World' })
+  }
+}
+```
+
+## Modify index.html
+
+```html
+<script>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fetchBtn = document.getElementById('fetch-btn')
+    const responseText = document.getElementById('response-output')
+
+    fetchBtn.addEventListener('click', async () => {
+      const response = await fetch('/.netlify/functions/hello-world').then(r => r.json())
+      responseText.innerText = JSON.stringify(response)
+    })
+  })
+</script>
+```
+
+## ntl dev 
+
+```
+➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl dev
+◈ Netlify Dev ◈
+◈ Ignored general context env var: LANG (defined in process)
+◈ No app server detected. Using simple static server
+◈ Running static server from "explorers-up-and-running-with-serverless-functions/public"
+◈ Loaded function hello-world http://localhost:8888/.netlify/functions/hello-world.
+◈ Functions server is listening on 51227
+◈ Setting up local development server
+
+────────────────────────────────────────────────────────────────
+  Netlify Build                                                 
+────────────────────────────────────────────────────────────────
+
+❯ Version
+  @netlify/build 28.4.5
+
+❯ Flags
+  {}
+
+❯ Current directory
+  /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions
+
+❯ Config file
+  /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/netlify.toml
+
+❯ Context
+  dev
+
+────────────────────────────────────────────────────────────────
+  1. Run command for local development                          
+────────────────────────────────────────────────────────────────
+
+
+◈ Static server listening to 3999
+
+(dev.command completed in 7ms)
+
+   ┌─────────────────────────────────────────────────┐
+   │                                                 │
+   │   ◈ Server now ready on http://localhost:8888   │
+   │                                                 │
+   └─────────────────────────────────────────────────┘
+
+✔ Setting up the Edge Functions environment. This may take a couple of minutes.
+```
+
+Now we visit <http://localhost:8888>:
+
+![](images/netlify-dev-1.png)
+
+When we click in the **fetch** button we get:
+
+![](images/netlify-dev-2.png)

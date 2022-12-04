@@ -129,11 +129,13 @@ Logging into your Netlify account...
 Opening https://app.netlify.com/authorize?response_type=ticket&ticket=7e106850c17d884de123c67a41784ae2
 ```
 
-![](public/images/netlify-login-1.png)
+AS the help says, it opens a web browser to acquire an OAuth token
 
-Once I've had clicked I've got the following message:
+![](images/netlify-login-1.png)
 
-![](public/images/netlify-login-2.png)
+Once I've had clicked `Authorize` I've got the following message:
+
+![](images/netlify-login-2.png)
 
 Now in the terminal appears:
 
@@ -186,8 +188,10 @@ Linked to netlify-serverless-functions-intro
 ? Netlify CLI needs access to your GitHub account to configure Webhooks and Deploy Keys. What would you like to do? Authorize with GitHub through app.netlify.com
 ```
 
-I have chose to authorize with GitHub through app.netlify.com
+I've chosen to authorize with GitHub through app.netlify.com
 
-![](public/images/netlify-init-1.png)
+![](images/netlify-init-1.png)
 
-![](public/images/netlify-init-2.png)
+and now I'm logged in netlify-cli with my GitHub credentials:
+
+![](images/netlify-init-2.png)

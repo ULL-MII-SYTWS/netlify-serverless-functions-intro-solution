@@ -12,6 +12,7 @@
     - [Edit netlify/functions/hello-world.js](#edit-netlifyfunctionshello-worldjs)
     - [Modify index.html](#modify-indexhtml)
     - [ntl dev](#ntl-dev)
+  - [The PokeAPI](#the-pokeapi)
 
 # Introduction to Netlify Serverless Functions
 
@@ -56,7 +57,10 @@ We can follow the lessons in the video course by checking out the branches in th
 
 ## My Experience
 
+
 ### netlify-cli
+
+See the videos up to [Create Your First Serverless Function](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions/create-your-first-serverless-function)  
 
 The tutoral installs `3.31.14`, but I have `12.2.8` installed.
 
@@ -377,3 +381,11 @@ Now we visit <http://localhost:8888>:
 When we click in the **fetch** button we get:
 
 ![](images/netlify-dev-2.png)
+
+## The PokeAPI
+
+Now watch the video  [Integrate with a Third Party API with Serverless Functions](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions/integrate-with-a-third-party-api-with-serverless-functions)
+
+* [PokeAPI web site]/(https://pokeapi.co/)
+* [PokeAPI](https://pokeapi.co/)
+* [docs](https://pokeapi.co/docs/v2)

@@ -4,6 +4,15 @@
   functions = "netlify/functions"
   publish = "public"
 
+[functions]
+  node_bundler = "esbuild" # function bundling method used 
+  
+  # method that leverages esbuild to bundle functions, 
+  # resulting in shorter bundling times and smaller artifacts. 
+  # TypeScript functions always use esbuild. 
+  # Currently available as an opt-in beta for JavaScript functions.
+  # zisi: default function bundling method for JavaScript functions.
+
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]

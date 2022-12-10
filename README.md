@@ -384,8 +384,11 @@ When we click in the **fetch** button we get:
 
 ## The PokeAPI
 
-Now watch the video  [Integrate with a Third Party API with Serverless Functions](https://explorers.netlify.com/learn/up-and-running-with-serverless-functions/integrate-with-a-third-party-api-with-serverless-functions)
+Now watch the video  [Integrate with a Third Party API with Serverless Functions](https://explorers.netlify.com/learn/wup-and-running-with-serverless-functions/integrate-with-a-third-party-api-with-serverless-functions)
+
+We are going to use the [PokeAPI](https://pokeapi.co/)
 
 * [PokeAPI web site]/(https://pokeapi.co/)
-* [PokeAPI](https://pokeapi.co/)
+* [REST PokeAPI](https://pokeapi.co.api/v2/)
+* [GraphQL PokeAPI](https://beta.pokeapi.co/graphql/console/)
 * [docs](https://pokeapi.co/docs/v2)

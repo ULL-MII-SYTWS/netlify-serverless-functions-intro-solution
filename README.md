@@ -384,7 +384,7 @@ When we click in the **fetch** button we get:
 
 ## The PokeAPI
 
-Now watch the video  [Integrate with a Third Party API with Serverless Functions](https://explorers.netlify.com/learn/wup-and-running-with-serverless-functions/integrate-with-a-third-party-api-with-serverless-functions)
+Now watch the video  [Integrate with a Third Party API with Serverless Functions](https://explorers.netlify.com/learn/wup-and-running-with-serverless-functions/integrate-with-a-third-party-api-with-serverless-functions) and follow the instructions
 
 We are going to use the [PokeAPI](https://pokeapi.co/)
 
@@ -392,3 +392,6 @@ We are going to use the [PokeAPI](https://pokeapi.co/)
 * [REST PokeAPI](https://pokeapi.co.api/v2/)
 * [GraphQL PokeAPI](https://beta.pokeapi.co/graphql/console/)
 * [docs](https://pokeapi.co/docs/v2)
+
+The fetch API is included in node v18 or later. If you are using an older version of node, we use the [node-fetch](https://www.npmjs.com/package/node-fetch) package.
+

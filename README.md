@@ -15,6 +15,7 @@
   - [ntl dev](#ntl-dev)
   - [The PokeAPI](#the-pokeapi)
   - [Deploy](#deploy)
+    - [References](#references)
   - [Draft](#draft)
 
 
@@ -461,6 +462,10 @@ Website URL:       https://netlify-serverless-functions-intro.netlify.app
 We can go to the logs URL or we can also go to the functions page and see the logs of a specific function like `pokedex`:
 
 ![netlify-serverless-function-logs](images/netlify-serverless-function-log-1.png)
+
+### References
+
+* Regarding prices and restrictions on deployment you can check the FAQ [Organization-owned private repository FAQ](https://www.netlify.com/pricing/private-org-repo-faq/)
 
 ## Draft
 

@@ -16,6 +16,7 @@
   - [The PokeAPI](#the-pokeapi)
   - [Deploy](#deploy)
     - [References](#references)
+  - [Netlify GitHub App](#netlify-github-app)
   - [Draft](#draft)
 
 
@@ -23,7 +24,7 @@
 
 ## Instructions
 
-See the section [Instructions](instructions.md)
+See the section [Instructions](INSTRUCTIONS.md)
 
 ## netlify-cli
 
@@ -466,6 +467,14 @@ We can go to the logs URL or we can also go to the functions page and see the lo
 ### References
 
 * Regarding prices and restrictions on deployment you can check the FAQ [Organization-owned private repository FAQ](https://www.netlify.com/pricing/private-org-repo-faq/)
+
+
+## Netlify GitHub App
+
+Configure the app at:
+
+* [https://github.com/apps/netlify](https://github.com/apps/netlify)
+
 
 ## Draft
 

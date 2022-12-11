@@ -39,72 +39,78 @@ DESCRIPTION
   - `NETLIFY_SITE_ID` - override any linked site in the current working directory.
 
   Lambda functions in the function folder can be in the following configurations for deployment:
+```
+
+Built Go binaries:
+------------------
+
+```
+functions/
+└── nameOfGoFunction
+```
+
+Build binaries of your Go language functions into the functions folder as part of your build process.
 
 
-  Built Go binaries:
-  ------------------
+Single file Node.js functions:
+-----------------------------
 
-          functions/
-          └── nameOfGoFunction
+Build dependency bundled Node.js lambda functions with tools like netlify-lambda, webpack or browserify into the function folder as part of your build process.
 
-  Build binaries of your Go language functions into the functions folder as part of your build process.
+```
+functions/
+└── nameOfBundledNodeJSFunction.js
+```
 
+Unbundled Node.js functions that have dependencies outside or inside of the functions folder:
+---------------------------------------------------------------------------------------------
 
-  Single file Node.js functions:
-  -----------------------------
+You can ship unbundled Node.js functions with the CLI, utilizing top level project dependencies, or a nested package.json.
+If you use nested dependencies, be sure to populate the nested node_modules as part of your build process before deploying using npm or yarn.
 
-  Build dependency bundled Node.js lambda functions with tools like netlify-lambda, webpack or browserify into the function folder as part of your build process.
+```
+project/
+├── functions
+│   ├── functionName/
+│   │   ├── functionName.js  (Note the folder and the function name need to match)
+│   │   ├── package.json
+│   │   └── node_modules/
+│   └── unbundledFunction.js
+├── package.json
+├── netlify.toml
+└── node_modules/
+```
 
-          ```
-          functions/
-          └── nameOfBundledNodeJSFunction.js
-          ```
-
-  Unbundled Node.js functions that have dependencies outside or inside of the functions folder:
-  ---------------------------------------------------------------------------------------------
-
-  You can ship unbundled Node.js functions with the CLI, utilizing top level project dependencies, or a nested package.json.
-  If you use nested dependencies, be sure to populate the nested node_modules as part of your build process before deploying using npm or yarn.
-
-          ```
-          project/
-          ├── functions
-          │   ├── functionName/
-          │   │   ├── functionName.js  (Note the folder and the function name need to match)
-          │   │   ├── package.json
-          │   │   └── node_modules/
-          │   └── unbundledFunction.js
-          ├── package.json
-          ├── netlify.toml
-          └── node_modules/
-          ```
-
-  Any mix of these configurations works as well.
+Any mix of these configurations works as well.
 
 
-  Node.js function entry points
-  -----------------------------
+Node.js function entry points
+-----------------------------
 
-  Function entry points are determined by the file name and name of the folder they are in:
+Function entry points are determined by the file name and name of the folder they are in:
 
-            ```
-            functions/
-            ├── aFolderlessFunctionEntrypoint.js
-            └── functionName/
-              ├── notTheEntryPoint.js
-              └── functionName.js
-            ```
+```
+functions/
+├── aFolderlessFunctionEntrypoint.js
+└── functionName/
+  ├── notTheEntryPoint.js
+  └── functionName.js
+```
 
-  Support for package.json's main field, and intrinsic index.js entrypoints are coming soon.
+Support for package.json's main field, and intrinsic index.js entrypoints are coming soon.
+
 
 EXAMPLES
-  $ netlify deploy
-  $ netlify deploy --site my-first-site
-  $ netlify deploy --prod
-  $ netlify deploy --prod --open
-  $ netlify deploy --prodIfUnlocked
-  $ netlify deploy --message "A message with an $ENV_VAR"
-  $ netlify deploy --auth $NETLIFY_AUTH_TOKEN
-  $ netlify deploy --trigger
-  $ netlify deploy --build --context deploy-preview
-  ```
+--------
+
+```
+$ netlify deploy
+$ netlify deploy --site my-first-site
+$ netlify deploy --prod
+$ netlify deploy --prod --open
+$ netlify deploy --prodIfUnlocked
+$ netlify deploy --message "A message with an $ENV_VAR"
+$ netlify deploy --auth $NETLIFY_AUTH_TOKEN
+$ netlify deploy --trigger
+$ netlify deploy --build --context deploy-preview
+```

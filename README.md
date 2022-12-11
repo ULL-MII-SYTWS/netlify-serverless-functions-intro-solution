@@ -1,4 +1,5 @@
 - [Report](#report)
+  - [Instructions](#instructions)
   - [netlify-cli](#netlify-cli)
   - [ntl cli help](#ntl-cli-help)
   - [ntl login](#ntl-login)
@@ -17,6 +18,10 @@
 
 
 # Report
+
+## Instructions
+
+See the section [Instructions](instructions.md)
 
 ## netlify-cli
 

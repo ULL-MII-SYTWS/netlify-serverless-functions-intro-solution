@@ -416,7 +416,51 @@ Deploys are atomic, and your site is never in an inconsistent state while you’
 
 With FTP or S3 uploads, each file is pushed live one after the other, so you can  get into situations where a new HTML page is live before the supporting assets (images, scripts, CSS) have been uploaded. And if your connection cuts out in the middle of an upload, your site could get stuck in a broken state for a long time.
 
+we can trigger the deploy from the netlify deploy page or from the command line.
+
 The help of [ntl deploy --help](ntl-deploy-help.md) is quite large.
+
+```
+➜  explorers-up-and-running-with-serverless-functions git:(main) ntl deploy
+Deploy path:        /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/public
+Functions path:     /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/netlify/functions
+Configuration path: /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/netlify.toml
+Deploying to draft URL...
+✔ No cached functions were found
+✔ Finished hashing 2 files and 2 functions
+✔ CDN requesting 0 files and 2 functions
+✔ Finished uploading 2 assets
+✔ Deploy is live!
+
+Logs:              https://app.netlify.com/sites/netlify-serverless-functions-intro/deploys/6395bd8407648c76f4100210
+Website Draft URL: https://6395bd8407648c76f4100210--netlify-serverless-functions-intro.netlify.app
+
+If everything looks good on your draft URL, deploy it to your main site URL with the --prod flag.
+netlify deploy --prod
+```
+
+since everythings looks good we can deploy it to the main site URL with the --prod flag.
+
+```
+➜  explorers-up-and-running-with-serverless-functions git:(main) ntl deploy --prod
+Deploy path:        /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/public
+Functions path:     /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/netlify/functions
+Configuration path: /Users/casianorodriguezleon/campus-virtual/2223/learning/serverless-learning/explorers-up-and-running-with-serverless-functions/netlify.toml
+Deploying to main site URL...
+✔ No cached functions were found
+✔ Finished hashing 2 files and 2 functions
+✔ CDN requesting 0 files and 0 functions
+✔ Finished uploading 0 assets
+✔ Deploy is live!
+
+Logs:              https://app.netlify.com/sites/netlify-serverless-functions-intro/deploys/6395beb125a7ad77bdb64ddc
+Unique Deploy URL: https://6395beb125a7ad77bdb64ddc--netlify-serverless-functions-intro.netlify.app
+Website URL:       https://netlify-serverless-functions-intro.netlify.app
+``` 
+
+We can go to the logs URL or we can also go to the functions page and see the logs of a specific function like `pokedex`:
+
+![netlify-serverless-function-logs](images/netlify-serverless-function-log-1.png)
 
 ## Draft
 

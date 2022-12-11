@@ -9,10 +9,12 @@
     - [ntl status](#ntl-status)
     - [ntl init](#ntl-init)
     - [But I've got an error](#but-ive-got-an-error)
+    - [ntl link](#ntl-link)
     - [Edit netlify/functions/hello-world.js](#edit-netlifyfunctionshello-worldjs)
     - [Modify index.html](#modify-indexhtml)
     - [ntl dev](#ntl-dev)
   - [The PokeAPI](#the-pokeapi)
+  - [Deploy](#deploy)
 
 # Introduction to Netlify Serverless Functions
 
@@ -251,7 +253,32 @@ Site URL:     https://netlify-serverless-functions-intro.netlify.app
 Site Id:      
 ```
 
-so I tried to use the `link` command to link the project to the Netlify site:
+### ntl link
+
+the `ntl link` command links a local repo or project folder to an existing site on Netlify
+
+```
+ntl link --help
+
+USAGE
+  $ netlify link [options]
+
+OPTIONS
+  --gitRemoteName <name>                    Name of Git remote to use. e.g. "origin"
+  -h, --help                                display help for command
+  --id <id>                                 ID of site to link to
+  --name <name>                             Name of site to link to
+  --debug                                   Print debugging information
+  --httpProxy [address]                     Proxy server address to route requests through.
+  --httpProxyCertificateFilename [file]     Certificate file to use when connecting using a proxy server
+
+EXAMPLES
+  $ netlify link
+  $ netlify link --id 123-123-123-123
+  $ netlify link --name my-site-name
+```
+
+I tried to use the `link` command to link the project to the Netlify site:
 
 ```
 ➜  explorers-up-and-running-with-serverless-functions git:(main) ✗ ntl link --gitRemoteName origin --debug
@@ -394,4 +421,16 @@ We are going to use the [PokeAPI](https://pokeapi.co/)
 * [docs](https://pokeapi.co/docs/v2)
 
 The fetch API is included in node v18 or later. If you are using an older version of node, we use the [node-fetch](https://www.npmjs.com/package/node-fetch) package.
+
+## Deploy
+
+Deploys are atomic, and your site is never in an inconsistent state while you’re uploading a new deploy.
+
+With FTP or S3 uploads, each file is pushed live one after the other, so you can  get into situations where a new HTML page is live before the supporting assets (images, scripts, CSS) have been uploaded. And if your connection cuts out in the middle of an upload, your site could get stuck in a broken state for a long time.
+
+At this point, when I pushed to GitHub the trigger to Netlify deploy didn't work. I had to go to Netlify and link the repo to the site:
+
+![](images/netlify-link-to-github-repo.png)
+
+![](images/netlify-link-to-github-repo-2.png)
 

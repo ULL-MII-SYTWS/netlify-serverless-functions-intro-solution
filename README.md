@@ -15,6 +15,7 @@
   - [ntl dev](#ntl-dev)
   - [The PokeAPI](#the-pokeapi)
   - [Deploy](#deploy)
+  - [Draft](#draft)
 
 
 # Report
@@ -414,6 +415,10 @@ The fetch API is included in node v18 or later. If you are using an older versio
 Deploys are atomic, and your site is never in an inconsistent state while you’re uploading a new deploy.
 
 With FTP or S3 uploads, each file is pushed live one after the other, so you can  get into situations where a new HTML page is live before the supporting assets (images, scripts, CSS) have been uploaded. And if your connection cuts out in the middle of an upload, your site could get stuck in a broken state for a long time.
+
+The help of [ntl deploy --help](ntl-deploy-help.md) is quite large.
+
+## Draft
 
 At this point, I realized that when I pushed to GitHub the trigger to Netlify deploy didn't work. this is a consequence of the error I've got at step [ntl init](#ntl-init)
 
